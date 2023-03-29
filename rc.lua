@@ -480,6 +480,7 @@ awful.rules.rules = {
         -- and the name shown there might not match defined rules here.
         name = {
           "Event Tester",  -- xev.
+          "Picture-in-Picture", -- Firefox video PiP
         },
         role = {
           "AlarmWindow",  -- Thunderbird's calendar.
@@ -489,8 +490,13 @@ awful.rules.rules = {
       }, properties = { floating = true }},
 
     -- Add titlebars to normal clients and dialogs
-    { rule_any = {type = { "normal", "dialog" }
-      }, properties = { titlebars_enabled = true }
+    -- { rule_any = {type = { "normal", "dialog" }
+    --   }, properties = { titlebars_enabled = true }
+    -- },
+
+    {
+        rule = { name = "Picture-in-Picture" },
+        properties = { ontop = true, sticky = true, opacity = 0.3 }
     },
 
     -- Set Firefox to always map on the tag named "2" on screen 1.
